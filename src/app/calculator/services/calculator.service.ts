@@ -1,7 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 
 const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-const operators = ['+', '-', '*', '/', '÷'];
+const operators = ['+', '-', '*', '/', '÷', 'x'];
 const especialOperators = ['+/-', '%', '=', '.', 'C', 'Backspace'];
 
 @Injectable({
@@ -15,7 +15,7 @@ export class CalculatorService {
   public constructNumber(value: string): void {
     // Validar input
     if (![...numbers, ...operators, ...especialOperators].includes(value)) {
-      console.log('Invalid input', value);
+      // console.log('Invalid input', value);
       return;
     }
 
@@ -130,6 +130,9 @@ export class CalculatorService {
         result = number1 - number2;
         break;
       case '*':
+        result = number1 * number2;
+        break;
+      case 'x':
         result = number1 * number2;
         break;
       case '/':

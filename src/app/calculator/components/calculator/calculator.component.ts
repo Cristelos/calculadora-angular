@@ -43,6 +43,7 @@ export class CalculatorComponent {
       Clear: 'C',
       Escape: 'C',
       X: '*',
+      // 'x': '*',
       '/': '÷',
     };
 
